@@ -1,0 +1,117 @@
+<html>
+<head>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.2em;
+      overflow: hidden;
+    }
+    
+    #bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      animation: background 10s ease-in-out infinite;
+    }
+    
+    @keyframes background {
+      0% {
+        background-color: #ff8c94;
+      }
+      25% {
+        background-color: #fda89e;
+      }
+      50% {
+        background-color: #fcabac;
+      }
+      75% {
+        background-color: #fbb1b9;
+      }
+      100% {
+        background-color: #ff8c94;
+      }
+    }
+    
+    center {
+      text-align: center;
+    }
+    
+    form {
+      width: 250px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+    
+    input[type="submit"] {
+      background-color: #ff6f69;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.5s ease-in-out;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #ffcc5c;
+    }
+    
+    h1 {
+      font-size: 3em;
+      color: #ff6f69;
+      margin-bottom: 30px;
+      animation: color-change 5s linear infinite;
+      text-shadow: 2px 2px #e6e6e6;
+    }
+    
+    @keyframes color-change {
+      0% {
+        color: #ff6f69;
+      }
+      50% {
+        color: #f0e3ff;
+      }
+      100% {
+        color: #ff6f69;
+      }
+    }
+    
+    .fade-in {
+      animation: fade-in 2s ease-out;
+    }
+    
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="bg"></div>
+  <center>
+    <h1>SEARCH ANY ELECTRONIC PRODUCT</h1>
+  </center>
+  <form method="POST" class="fade-in">
+    {% csrf_token %}
+    <input type="text" name="product_name" placeholder="Enter Product Name">
+    <input type="submit" value="Search">
+  </form>
+</body>
+</html>

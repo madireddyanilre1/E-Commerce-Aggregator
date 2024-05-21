@@ -1,0 +1,27 @@
+<html>
+    <body>
+        <center><h1>RESULTS FOR {{name}}<h1><center>
+        <h1>FLIPKART PRICES</h1>
+        <ul>
+            {% for name,price,rating in flipkart %}
+                <li>
+                    PRODUCT NAME   :{{name}} <br>
+                    PRODUCT PRICE  :{{price}} <br>
+                    PRODUCT RATING :{{rating}} <br>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h1>EBAY PRICES<h1>
+        <ul>
+            {% for name,price,rating in ebay %}
+                <li>
+                    PRODUCT NAME   :{{name}} <br>
+                    PRODUCT PRICE  :{{price}} <br>
+                    PRODUCT RATING :{{rating}} <br>
+                </li>
+            {% endfor %}
+        </ul>
+
+    </body>
+</html>
